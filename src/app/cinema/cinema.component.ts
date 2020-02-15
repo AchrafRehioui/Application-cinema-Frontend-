@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CinemaService } from '../services/cinema.service';
 
 @Component({
   selector: 'app-cinema',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CinemaComponent implements OnInit {
 
-  constructor() { }
+  public cities; 
+  public cinemas;
 
-  ngOnInit(): void {
+  constructor(private cinemaService:CinemaService) { }
+
+  ngOnInit(){
+    this.cinemaService.getCities()
+      .subscribe(data=>{
+        this.cities=data;
+      },err=>{
+          console.log(err);
+      })
+  }
+   onGetCinemas(v){
+    this.cinemaService.getCinemas(v)
+    .subscribe(data=>{
+        this.cinemas=data;
+      },err=>{
+          console.log(err);
+      })
   }
 
 }
