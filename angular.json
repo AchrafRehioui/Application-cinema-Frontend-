@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Cinema-Front-web": {
@@ -26,7 +26,6 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -124,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Cinema-Front-web"
+    }
+  },
+  "defaultProject": "Cinema-Front-web",
+  "cli": {
+    "analytics": "47af7a87-89de-41a0-989d-7b718504e49a"
+  }
 }
